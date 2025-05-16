@@ -26,3 +26,6 @@ bin/magento setup:upgrade
 bin/magento cache:flush
 ```
 
+![image](https://github.com/user-attachments/assets/3ac834c3-2ce5-49a4-bb5d-896aab80a6ab)
+![image](https://github.com/user-attachments/assets/c15f5e7c-bab0-4f63-9237-b41e78ab08aa)
+

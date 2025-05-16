@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="abandonedcartNotification" xsi:type="object">Noteq\AbandonedCart\Model\Commands\SendNotification</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Noteq\AbandonedCart\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">AbandonedCartLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Noteq\AbandonedCart\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Noteq\AbandonedCart\Model\ResourceModel\Abandoned\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wac_abandoned_cart</argument>
+            <argument name="resourceModel" xsi:type="string">Noteq\AbandonedCart\Model\ResourceModel\Abandoned\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="wac_abandoned_report_grid_data_source" xsi:type="string">Noteq\AbandonedCart\Model\ResourceModel\Abandoned\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

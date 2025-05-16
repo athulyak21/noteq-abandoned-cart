@@ -1,0 +1,17 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/menu.xsd">
+    <menu>
+        <add id="Noteq_AbandonedCart::notification" 
+            title="Abandoned Cart" 
+            module="Noteq_AbandonedCart" 
+            parent="Noteq::top_level" 
+            sortOrder="40" 
+            resource="Noteq_AbandonedCart::notification_list"/> 
+        <add id="Noteq_AbandonedCart::wac_abandoned_cart"
+			title="Abandoned Cart Notification List"
+            module="Noteq_AbandonedCart" 
+			sortOrder="10"
+			parent="Noteq_AbandonedCart::notification"
+			action="abandonedcart/abandoned" 
+			resource="Noteq_AbandonedCart::wac_abandoned_cart"/>
+    </menu>
+</config>
